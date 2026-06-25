@@ -1,10 +1,10 @@
-# Git & GitHub Practice Repository
+# Git & GitHub DevOps Handbook
 
 ## Overview
 
-This repository documents my hands-on learning journey with Git and GitHub. The purpose of this project is to understand version control concepts, repository management, branching strategies, and collaboration workflows that are commonly used in DevOps and software development.
+This repository is a structured learning journey of Git and GitHub for DevOps engineering. It covers foundational concepts, practical commands, branching workflows, remote repository management, SSH authentication, and real-world DevOps usage.
 
-The exercises in this repository focus on practical Git commands and GitHub operations that every DevOps Engineer should know.
+The goal is to build strong version control skills required for CI/CD pipelines, infrastructure automation, and collaborative software development.
 
 ---
 
@@ -12,7 +12,7 @@ The exercises in this repository focus on practical Git commands and GitHub oper
 
 Git is a distributed version control system (DVCS) used to track changes in source code and other files over time.
 
-It helps developers:
+Key Features of Git:
 
 * Track file modifications
 * Maintain version history
@@ -42,7 +42,7 @@ With Git:
 
 # What is GitHub?
 
-GitHub is a cloud-based platform that hosts Git repositories.
+GitHub is a cloud-based platform that hosts Git repositories and enables collaboration.
 
 GitHub provides:
 
@@ -70,15 +70,7 @@ GitHub provides:
 Git follows a simple workflow:
 
 ```text
-Working Directory
-        ↓
-   Staging Area
-        ↓
-      Commit
-        ↓
- Local Repository
-        ↓
- Remote Repository (GitHub)
+Working Directory -> Staging Area -> Commit -> Local Repository -> Remote Repository (GitHub)
 ```
 
 ### Working Directory
@@ -305,19 +297,41 @@ git commit -m "added script"
 
 ---
 
-# SSH Authentication
+# SSH Authentication or Configuration
 
-Generate SSH key:
+SSH is used for secure authentication with GitHub without repeatedly entering credentials.
+
+## Step-by-Step SSH Setup
+
+### Step 1: Generate SSH Key
 
 ```bash
 ssh-keygen
 ```
+
+Press Enter for default file location.
 
 View public key:
 
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
+
+Copy the output carefully.
+
+### Step 2: Add SSH Key to GitHub
+
+Go to:
+
+```text id="ssh5"
+GitHub → Settings → SSH and GPG Keys → New SSH Key
+```
+
+Then:
+
+* Title: (e.g., My Laptop Key)
+* Paste the copied public key
+* Click **Add SSH Key**
 
 Benefits of SSH:
 
